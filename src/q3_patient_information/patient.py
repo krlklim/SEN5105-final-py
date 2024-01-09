@@ -1,4 +1,6 @@
 class Patient:
+
+    # initialization Patient attributes
     def __init__(self, first_name,
                  middle_name,
                  last_name,
@@ -19,15 +21,19 @@ class Patient:
         self.emergency_contact_name = emergency_contact_name
         self.emergency_contact_number = emergency_contact_number
 
+    # method to return full name of the patient
     def full_name(self):
         return f"{self.first_name} {self.middle_name} {self.last_name}"
 
+    # method to return full address of the patient
     def full_address(self):
         return f"{self.address}, {self.city}, {self.state}, {self.zip_code}"
 
+    # method to return emergency contact info
     def emergency_contact_info(self):
         return f"{self.emergency_contact_name} - {self.emergency_contact_number}"
 
+    # method to display patient info
     def display_patient_info(self):
         print()
         print("__________________________________________________________________________________")

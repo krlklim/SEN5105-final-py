@@ -1,4 +1,6 @@
 class Procedure:
+
+    # initialization Procedure attributes
     def __init__(self, name, date, practitioner, charge):
         self.name = name
         self.date = date

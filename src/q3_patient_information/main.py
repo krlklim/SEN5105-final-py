@@ -1,7 +1,7 @@
-from patient import Patient
-from procedure import Procedure
-from prettytable import PrettyTable
-from datetime import datetime
+from patient import Patient  # importing Patient class
+from procedure import Procedure  # importing Procedure class
+from prettytable import PrettyTable  # importing prettytable library to print humanized table
+from datetime import datetime  # library to manipulate date
 
 
 def main():
@@ -30,14 +30,16 @@ def main():
          "charge": 200.00}
     ]
 
-    patient = Patient(**patient_data)
-    procedures = [Procedure(**data) for data in procedure_data]
+    patient = Patient(**patient_data)  # sending patient_data and attributes to Patient class
+    procedures = [Procedure(**data) for data in procedure_data]  # sending procedure_data and attributes to Procedure class
 
-    patient.display_patient_info()
+    patient.display_patient_info()  # Patient class method to display info
 
-    procedure_table = PrettyTable()
-    procedure_table.align = 'l'
-    procedure_table.field_names = ["Procedure #1", "Procedure #2", "Procedure #3"]
+    procedure_table = PrettyTable()  # creating an object of PrettyTable library
+    procedure_table.align = 'l'  # align mode for the table (l - align to the left)
+    procedure_table.field_names = ["Procedure #1", "Procedure #2", "Procedure #3"]  # table headers
+
+    # .add_row - adding rows to the table
     procedure_table.add_row([f"Procedure name: {procedures[0].name}",
                              f"Procedure name: {procedures[1].name}",
                              f"Procedure name: {procedures[2].name}"])
@@ -53,7 +55,7 @@ def main():
 
     print(procedure_table)
 
-    total_charges = sum(procedure.charge for procedure in procedures)
+    total_charges = sum(procedure.charge for procedure in procedures)  # count total charges form the patient
     print(f"Total Charges for all Procedures: {total_charges:.2f}")
 
 
